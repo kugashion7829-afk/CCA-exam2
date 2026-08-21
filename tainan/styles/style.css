@@ -1,0 +1,730 @@
+@charset "UTF-8";
+ 
+:root{
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  background-color: #f4f4f4;
+}
+
+p.font{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    font-size: 100%; /* 16px */
+}
+
+img{
+    max-width:100%;
+}
+
+/* パンくずリスト */
+nav{
+    margin:0 10%;
+}
+
+nav ol{
+    display:flex;
+    align-items: center;
+    padding-block:8px;
+    height: 32px;
+}
+
+nav li:not(li.not):hover{
+    font-weight: bold;
+    text-decoration:underline;
+}
+
+/* ------------ */
+
+/* コンテンツ幅余白 */
+main{
+    margin-inline:20px; 
+    text-align: center;
+}
+/* .wrap{
+    border:solid 3px lightcoral;
+} */
+/* ------------ */
+
+/* 各セクション上下余白 */
+#attraction,
+#gourmet,
+#pickup{
+    margin-bottom:2.5rem;
+}
+
+/* ------------ */
+
+/* 小見出し */
+h2{
+    font-size:24px;
+    position:relative;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top:1.25rem;
+}
+
+.midasi {
+  position: relative;
+  display: inline-block;
+}
+
+.midasi img {
+  display: block;
+  width: 100%;
+
+}
+.text {
+  position: absolute;
+  top: 50%;
+    left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+       width: 100%;
+}
+.small {
+    font-size: 50%;
+}
+/* ------------ */
+
+
+/* 観光名所セクション */
+h3{
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing:30%;
+}
+
+.atContent{
+    display: flex;
+    flex-direction: column;
+    gap:1.25em;
+    padding-inline:20px;
+    margin-top:40px;
+}
+
+.detail{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1.25rem;
+}
+
+.detail p{
+    text-align: justify;
+    padding:0.5rem 2.25rem;
+    line-height: 19px;
+    font-size:12px;
+    background-color: rgba(100, 201, 155, 0.2);
+}
+
+.item05{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:0.5rem 12%;
+    line-height: 19px;
+    font-size:12px;
+    background-color: rgba(100, 201, 155, 0.2);
+    width:100%;
+}
+
+.time{
+    display: block;
+    margin-top: 0.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.itemImg{
+    display: flex;
+    gap:1.25em;
+    justify-content: center;
+}
+/* ------------ */
+
+/* セクション説明*/
+.intro{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block:44px;
+    width:67%
+}
+
+.introText{
+    text-align: justify;
+    line-height: 19px;
+    font-size:12px;
+    display:block;
+    width:100%;
+}
+
+.intro span{
+    width: 100%;
+    height: 1px;
+    background: #000;
+    transform: rotate(180deg);
+    margin-block:12px;
+}
+/* ------------ */
+
+/* モーダル全体 */
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    z-index:9999;
+}
+
+/* 黒い背景 */
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.6);
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+#modal.show .overlay {
+  opacity: 1;
+}
+/* 白い画面 */
+.modalContent{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0.8);
+  opacity: 0;
+    width: 375px;
+    height: 375px;
+    background:#ffffff;
+    
+transition:
+  transform .6s cubic-bezier(.22, 1, .36, 1),
+  opacity .6s ease;
+
+  z-index: 10000;
+}
+
+#modal.show .modalContent {
+  transform: translate(-50%, -50%) scale(.9);
+  opacity: 1;
+}
+
+.fl {
+    display:block;
+    justify-content: center;
+}
+
+.fl img {
+    width: 283px;
+    height: 283px;
+    margin: 0 40px 30px 40px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+#close{
+    float:right;
+    cursor:pointer;
+}
+
+#close {
+    width: auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    margin: 10px 10px;
+}
+
+/*
+
+#modal {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 300ms ease;
+}
+
+#modal.show {
+    opacity: 1;
+    visibility: visible;
+}*/
+/*-----------------*/
+
+
+
+
+/* グルメコンテンツ */
+.grmContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.list{
+    display:flex;
+    flex-direction: column;
+}
+
+.list h4{
+    margin-block:0.5em;
+}
+
+.list h5{
+    font-size:32px;
+}
+
+.list p{
+    font-size:12px;
+    text-align: left;
+    padding:0.5rem 17%;
+    line-height: 19px;
+}
+
+ 
+.open {    /*ボタン */
+    font-size:12px;
+    height: 1em;
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left:auto;
+    padding-inline:17%;
+    width:100%;
+}
+
+.border{
+    display:block;
+    margin:1.25em auto;
+    width: 60vw;
+    height: 1px;
+    background: #000;
+    transform: rotate(180deg);
+}
+
+
+/* ボタンホバー */
+button {
+    transition: transform 200ms ease-in;
+    transform-origin: left center;
+}
+
+button:hover{
+    text-decoration: underline;
+    color:rgba(0, 0, 0, 0.5);
+    transform:scale(1.1);
+}
+/* ------------ */
+
+/* ピックアップコンテンツ */
+.set{
+    width:67%;
+}
+
+h6{
+    font-size:24px;
+}
+
+h6::after{
+    content:'';
+    display:block;
+    margin:0.8rem auto;
+    width: 100%;
+    height: 1px;
+    background: #000;
+    transform: rotate(180deg);
+}
+
+.setIntro{
+    width:60vw;
+    font-size:12px;
+    line-height: 19px;
+    margin-top:1em;
+    text-align: justify;
+}
+
+.pickupContent{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    margin:3.8em 0 2.5em;
+    gap:2.5rem;
+}
+
+.article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:20px;
+}
+
+.article02,
+.article05,
+.article07{
+    font-size:12px;
+    line-height: 19px;
+    text-align: justify;
+}
+
+.article05{
+    width:67%;
+}
+
+.article06{
+    width:78%;
+}
+
+.article08{
+    width:89%;
+}
+
+.artSet01,
+.artSet03{
+    width:67%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:20px;
+}
+
+.artSet02{
+    display: flex;
+    justify-content: space-between;
+    gap:1.25em;
+}
+
+.artSet04{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:20px;
+}
+
+@media  screen and (min-width: 675px){
+p.item02,
+p.item05{
+    max-width:590px;
+}
+}
+
+
+@media screen and (min-width:768px){
+/* コンテンツ幅余白 */
+main{
+    margin-inline:83px; 
+    text-align: center;
+}
+/* .wrap{
+    border:solid 3px lightcoral;
+} */
+/* ------------ */
+
+/* パンくず */
+nav{
+    margin-inline:103px auto;
+}
+nav ol{
+    display:flex;
+    height:58px;
+}
+nav li,
+nav span{
+    font-size:clamp(20px,1vw,30px);
+    margin-inline:1px;
+}
+/* ------------ */
+
+/* 小見出し */
+h2{
+    font-size:clamp(24px, 3.5vw, 48px);
+}
+.container{
+    justify-content: left;
+    margin-block:1.25em 1.25em clamp(40px, 4vw, 80px);
+    margin-inline:20px auto;
+}
+
+.midasi img {
+    width: clamp(200px, 35vw, 580px);
+    height: auto;
+}
+
+.rightContainer{
+    justify-content: right;/*左右変える*/
+    margin-block:1.25em 1.25em clamp(40px, 4vw, 80px);
+    margin-inline:auto 20px;
+}
+/* ------------ */
+
+/* 観光セクション */
+h3{
+    text-align: justify;
+    letter-spacing: 30%;
+    font-size:clamp(24px, 2.7vw, 36px);
+    font-weight: bold;
+}
+
+.detail{
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    grid-template-areas: 
+        "img1 text1"
+        "img2 text2";
+    align-items: stretch;
+    column-gap:clamp(40px,4.4vw,60px);
+    row-gap: 2.5em;
+}
+
+.atContent{
+    margin-top:80px;
+}
+
+.item01{ 
+    grid-area: img1;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.item02{ grid-area: text1;}
+.itemImg{ grid-area: img2;}
+.item05{ grid-area: text2;}
+
+.detail picture img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+p.item02,
+p.item05{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size:clamp(10px, 1.5vw, 20px);
+    line-height:clamp(10px, 2vw,32px);
+    padding: 1.25em;
+    margin:0;
+}
+
+
+/* ------------ */
+
+
+/* イントロダクション */
+.intro{
+    width:40%;
+    margin:0;
+}
+
+.introText{
+    text-align: justify;
+    line-height: clamp(20px, 2.3vw, 32px);
+    font-size:clamp(12px, 1.5vw, 20px);
+    width: 100%;
+}
+
+.intro span{
+    width: 100%;
+    height: 1px;
+    background: #000;
+    transform: rotate(180deg);
+    margin-block:clamp(30px, 4.6vw, 60px);
+}
+/* ------------ */
+
+/* グルメセクション */
+.grmContent{
+    margin-inline:60px;
+    align-items: flex-start;
+}
+
+.border{
+    width:35%;
+    margin-block:80px;
+}
+
+.box .border{
+    margin-block:40px;
+}
+
+.list{
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-areas:
+    "box1 box2"
+    "box3 box4";
+    column-gap:clamp(30px,4.5vw,60px);
+}
+
+.box1{ grid-area:box1; }
+.box2{ grid-area:box2; }
+.box3{ grid-area:box3; }
+.box4{ grid-area:box4; }
+
+.box{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.listTitle{
+    display:flex;
+    align-items: flex-end;
+    margin-bottom:20px;
+}
+
+.list h4{
+    margin-left:20px;
+    margin-bottom:0;
+    font-size:clamp(10px,1.9vw,24px);
+}
+
+.list h5{
+    font-size:clamp(28px,2.6vw,36px);
+}
+
+.list p{
+    font-size:clamp(12px,1.5vw,20px);
+    line-height: 2em;
+    width:100%;
+    padding:0;
+    margin-block:20px 40px;
+}
+
+.listBorder{
+    width:100%;
+}
+
+/*button*/
+.open{
+    justify-content: flex-start;
+    padding:0;
+    font-size:clamp(14px,1.5vw,20px);
+    margin-top:auto;
+    width: 30%;
+    margin-inline: 0 auto;
+}
+/* ------------ */
+
+/* ピックアップセクション */
+.pickupContent{
+    margin-inline:3.8em;
+}
+
+/* セクション説明 */
+h6{
+    font-size:clamp(24px,2.5vw,36px);
+    width:100%;
+}
+.set{
+    width:40%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin-right:auto;
+    margin-bottom:1.25em;
+}
+
+.setBorder{
+    width:100%;
+}
+
+p.setIntro{
+    width:100%;
+    font-size:clamp(12px,1.9vw,20px);
+    line-height: 32px;
+    margin-top:1.2rem;
+}
+/* ------------ */
+
+/* 記事 */
+.article{
+    width:100%;
+    max-width:100%;
+    gap:clamp(40px, 5.8vw, 80px);
+}
+
+.artSet01{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width:100%;
+    gap:3.75em;
+}
+
+.artSet02{
+    gap:3.75em;
+}
+.artSet03{
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    gap:3.75em;
+}
+.artSet04{
+    gap: clamp(10px, 2vw, 30px);
+}
+
+.article01,
+.article06{
+    width:60%;
+}
+.article02,
+.artSet04{
+    width:40%;
+}
+
+.article08{
+    width:100%;
+}
+
+.article05{
+    width: 100%;
+    text-align: center;
+    font-size:clamp(12px,1.4vw,20px);
+    line-height: clamp(24px,2.5vw,32px);
+}
+.article02,
+.article07{
+    font-size:clamp(12px,1.4vw,20px);
+    text-align: justify;
+    line-height: clamp(24px,2.5vw,32px);
+}
+/* ------------ */
+
+/* モーダル白い画面 */
+.modalContent{
+    width: 90%;
+    max-width: 675px;
+    height: 90%;
+    max-height: 675px;
+}
+
+.fl img {
+    width: 90%;
+    max-width: 555px;
+    height: 90%;
+    max-height: 555px;
+}
+
+
+}

@@ -1,0 +1,668 @@
+@charset 'UTF-8';
+
+:root{
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html {
+  font-size: 100%; /* 16px */
+  background-color: #F4F4F4;
+}
+main{
+    margin:20px; 
+    text-align: center;
+}
+
+img{
+    max-width:100%;
+}
+body.loading {
+  overflow: hidden;
+  height: 100vh;
+    touch-action: none;
+}
+
+/*パンくずリスト*/
+nav{
+    margin-inline:20px auto;
+}
+nav ul{
+    display:flex;
+    padding-block:8px;
+}
+nav li,
+nav span{
+    font-size:clamp(16px,1vw,25px);
+}
+
+nav li:not(li.not):hover{
+    font-weight: bold;
+    text-decoration:underline;
+}
+h2 {
+    font-size: 24px;
+    margin: 30px 0 30px 0;
+}
+h3 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 5px 0 20px 0;
+}
+/*------観光名所-------*/
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: -20px;
+}
+.midasi {
+  position: relative;
+  display: inline-block;
+ 
+}
+.text {
+  position: absolute;
+  top: 50%;
+    left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+       width: 100%;
+}
+.midasi img {
+  display: block;
+  width: 100%;
+}
+.small {
+    font-size: 50%;
+}
+
+.containe {
+  display: flex;
+  justify-content: center;
+}/*見出し夜市用*/
+
+.kyuhun,
+.tai10 {
+   text-align: center;
+}
+.komento {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    background-color: #6cbad833;
+    padding: 10px 36px;
+    margin: 20px 19px;
+}
+.kyuhun1,
+.tai101 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.kyuhun1 p {
+    
+    margin: 10px;
+}
+.nerai {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    background-color: #6cbad833;
+    padding: 10px 10px;
+    margin: 20px 21px;
+}
+
+.kei {
+    width: 64%;
+    
+    margin: 15px auto;
+}
+.subtitle{
+    text-align: justify;
+    line-height: 19px;
+    font-size:12px;
+    padding: 0 3.7rem;
+    display:block;
+    margin:0 auto;
+}
+
+.intro span{
+    width: 13rem;
+    height: 1px;
+    background: #000;
+    transform: rotate(180deg);
+    margin-block:1rem;
+}
+
+.intro{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.yorukome {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    padding: 0 60px;
+}
+.itemu1 {
+    text-align: center;
+    margin: 40px 0 20px 0;
+}
+.itemu6 {
+    text-align: center;
+    margin:20px 0 40px 0;
+}
+.itemu img {
+    height: 48px;
+    width: 130px;
+}
+.itemu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+   place-items: center;
+  
+  gap: 30px;
+}
+/*ボタン用*/
+.open {
+  position: relative;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.open img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.btn-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: clamp(12px, 4vw, 18px);
+  font-weight: bold;
+
+  white-space: nowrap;
+}
+
+.open img {
+  transition: transform 0.3s ease;
+}
+
+.open:hover img {
+  transform: scale(1.1);
+}
+
+.aku {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    margin: 0 0 -10px 0;
+}
+.akuga {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 40px 0 50px 0;
+}
+h4 {
+    margin: 15px 0 5px 0;
+}
+.akukome {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    padding: 0 57px;
+}
+.kado {
+    display: block;
+    margin: 30px auto 60px 65px;
+}
+/* ==========================
+   モーダル全体
+========================== */
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+
+/* ==========================
+   オーバーレイ（背景）
+========================== */
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .6);
+
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+#modal.show .overlay {
+  opacity: 1;
+}
+
+
+/* ==========================
+   モーダル本体
+========================== */
+/*
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 375px;
+  height: 670px;
+
+  background: #007AB7;
+
+  transform: translate(-50%, -50%);
+  opacity: 0;
+
+  z-index: 10000;
+}
+
+#modal.show .modal-content {
+  animation: popup 0.5s ease forwards;
+}*/
+
+.modalContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 375px;
+  height: 670px;
+
+  background: #007AB7;
+
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+
+transition:
+  transform .6s cubic-bezier(.22, 1, .36, 1),
+  opacity .6s ease;
+
+  z-index: 10000;
+}
+
+#modal.show .modalContent {
+  transform: translate(-50%, -50%) scale(.9);
+  opacity: 1;
+}
+
+/* 背景 
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+
+  opacity: 0;
+  transition: opacity .6s ease;
+}
+
+#modal.show .overlay {
+  opacity: 1;
+}*/
+
+.gurido img {
+ width: 335px;
+ height: 223px;
+ margin-left: 20px;
+}
+
+#close{
+    float:right;
+    cursor:pointer;
+}
+#close {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  margin: 10px 10px 0 0;
+}
+#modalText {
+    margin-top: 30px;
+  padding: 0 35px;
+ 
+}
+#modalText,
+#modalTime {
+ text-align: center;
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 1.6;
+}
+#modalTime {
+  margin-top: 25px;
+}
+
+#modalTitle {
+  color:#ffffff;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  margin: 40px 0 25px 55px;
+}
+#modalImage {
+  margin: 0 0;
+}
+/*--------------------------------pc版------------------------------------------*/
+@media  screen and (min-width: 768px) {
+
+main{
+    margin:83px; 
+    text-align: center;
+}
+
+nav{
+    margin-inline:103px auto;
+}
+nav ul{
+    display:flex;
+    padding-block:20px 18px;
+}
+nav li,
+nav span{
+    font-size:clamp(20px,1vw,30px);
+    margin-inline:1px;
+}
+h3 {
+    font-size: 36px;
+text-align: left;
+margin: 30px 0 0 30px;
+}
+.container {
+    text-align: left;
+    justify-content: left;
+   margin: -90px 30px 20px 30px;
+}
+.containern {
+    text-align: left;
+    justify-content: left;
+   margin: 10px 30px 20px 30px;
+}
+.midasi img {
+    width:  clamp(250px, 40vw, 600px);
+  height: auto;
+}
+.containe {
+    text-align: left;
+    justify-content: right;
+   margin: 10px 20px;
+}
+
+h2 .text {
+    font-size: clamp(24px, 3vw, 48px);
+}
+.concept{
+    display:grid;
+    grid-template-columns:4fr 3fr;
+    grid-template-areas:
+        "title brank"
+        "image1 text1"
+        "image2 text2";
+    gap:20px 60px;
+}
+
+.item00{ grid-area:title; }
+.kyuhun{ grid-area:image1; }
+.komento{ grid-area:text1; }
+.kyuhun1{ grid-area:image2; }
+.nerai{ grid-area:text2; }
+
+.item00 {
+    padding-bottom: -40px;
+}
+.komento {
+     font-size: clamp(12px, 1.4vw, 20px);
+    line-height: 1.5;
+    margin: 0 20px 0 0;
+     padding-inline: clamp(5px, 2vw, 40px);
+    display: flex;
+   text-align: center;
+   justify-content: center;
+    align-items: center;
+}
+.nerai {
+    font-size: clamp(12px, 1.2vw, 20px);
+    display: flex;
+   text-align: center;
+   justify-content: center;
+    align-items: center;
+   line-height: 2;
+   margin: 0 20px 0 0;
+   padding: 0 0;
+}
+
+.kyuhun,
+.kyuhun1,
+.tai10,
+.tai101 {
+    margin-left: 30px;
+}
+
+.tai10{ grid-area:image1; }
+.tai101{ grid-area:image2; }
+
+.concep{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-areas:
+        " text1 image1"
+        " botan image2";
+    gap:60px 70px;
+    
+}
+.itemu1{ grid-area:image1; }
+.subtitle{ grid-area:text1; }
+.itemu6{ grid-area:image2; }
+.itemu{ grid-area:botan; }
+
+.itemu img {
+  width: 210px;
+  height: clamp(50px, 7vw, 90px);
+}
+
+  
+.itemu { 
+     justify-self: center;
+  align-self: start;
+gap: 30px;
+margin-top: 25px;
+}
+
+.itemu3 {
+      justify-self: start;
+      align-self: end;
+}
+.itemu2 {
+    justify-self: end;
+    align-self: end;
+}
+.itemu4 {
+    justify-self: end;
+    align-self: start;
+}
+.itemu5 {
+    justify-self: start;
+    align-self: start;
+}
+.itemu6 img {
+    margin: 0 0;
+    justify-self: start;
+    align-self: start;
+    padding: 0 20px 0 0;
+}
+.itemu1 {
+ justify-self: start;
+      align-self: end;
+      margin-bottom: 50px;
+      padding: 0 20px 0 0;
+}
+.subtitle {
+    font-size: clamp(12px, 1.4vw, 20px);
+    line-height: 1.6;
+    padding-top: clamp(1px, 2vw, 90px);
+    padding-bottom: clamp(1px, 2vw, 90px);
+    padding-left: clamp(20px, 4vw, 120px);
+    padding-right: clamp(20px, 4vw, 120px);
+   margin-left: 0;
+}
+
+.intro span {
+     width: clamp(250px, 33vw, 500px);
+}
+
+
+.intro {
+    place-self: center end;
+}
+.btn-text {
+    font-size: clamp(12px, 2vw, 18px);
+}
+
+.open {
+  transition: transform 0.3s ease;
+}
+
+.open:hover {
+  transform: scale(1.1);
+}
+.kei {
+    width: 40%;
+    
+    margin: 60px auto;
+}
+
+.sec {
+    margin-bottom: 50px;
+}
+.aku {
+    font-size: clamp(12px, 1.4vw, 24px);
+    text-align: left;
+    margin: 50px 0 0 150px;
+}
+.akuse .kei {
+    width: 28%;
+   margin: 30px 0 0 130px;
+}
+.akuga {
+    padding: 0 35px;
+}
+
+.akukome {
+    display:grid;
+    grid-template-columns:3fr 3fr;
+    grid-template-areas:
+        "text1 text2"
+        "text3 text4"
+        "brank image1";
+    gap:40px 10px;
+}
+.akukome h4 {
+    text-align: center;
+   font-size: clamp(12px, 1.4vw, 24px);
+   margin-bottom: 40px;
+}
+.akukome p {
+padding: 0 70px;
+font-size: clamp(12px, 1.4vw, 24px);
+ line-height: 1.6;
+  padding-left: clamp(20px, 4vw, 120px);
+    padding-right: clamp(20px, 4vw, 120px)
+}
+.kado { grid-area:image1;}
+ 
+.kado {
+    width: clamp(120px, 15vw, 264px);
+    height: auto;
+ place-self: center center;
+ margin: 0;
+}
+/* 青い画面 */
+.modalContent{
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+      transform:translate(-50%,-50%);
+
+    width: 1370px;
+
+    height: 610px;
+
+    background:#007AB7;
+
+    z-index:9999;
+}
+
+#modalTitle {
+  font-size: 36px;
+  text-align: left;
+  margin-left: 90px;
+}
+
+.gurido img {
+ width: 600px;
+ height: 470px;
+ margin-left: 92px;
+ margin-top: -15px;
+}
+#close {
+ margin: 10px 10px;
+}
+#modalText,
+#modalTime {
+  font-size: 20px;
+}
+.gurido {
+  display: grid;
+  grid-template-rows: 200px 260px;
+  grid-template-columns: 55% 45%;
+}
+#modalText {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  margin: -22px 0 0 -70px;
+  padding: 0 80px;
+  text-align: left;
+}
+#modalTime {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  margin: 0 0 0 -70px;
+}
+#modalImage {
+  margin: -13px  0 0 90px ;
+}
+
+}
