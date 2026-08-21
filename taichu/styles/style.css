@@ -1,0 +1,779 @@
+@charset "UTF-8";
+ 
+:root{
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  background-color: #f4f4f4;
+}
+
+/* コンテンツ幅余白 */
+main{
+    margin:20px; 
+    text-align: center;
+}
+/* .wrap{
+    border:solid 3px lightcoral;
+} */
+/* ------------ */
+
+p.font{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+  font-size: 100%; /* 16px */
+}
+
+/* パンくず */
+nav{
+    margin-inline:20px auto;
+}
+nav ol{
+    display:flex;
+    padding-block:8px;
+}
+nav li,
+nav span{
+    font-size:clamp(16px,1vw,25px);
+}
+
+nav li:not(li.not):hover{
+    font-weight: bold;
+    text-decoration:underline;
+}
+
+/* ------------ */
+
+/* 小見出し */
+h2{
+    font-size:24px;
+    position:relative;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top:1.25rem;
+}
+.midasi {
+  position: relative;
+  display: inline-block;
+}
+
+.midasi img {
+  display: block;
+  width: 100%;
+
+}
+.text {
+  position: absolute;
+  top: 50%;
+    left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+       width: 100%;
+}
+.small {
+    font-size: 50%;
+}
+/* --------------- */
+
+.atrContent,
+.museumContent{
+    padding:1.25em 1.25em 2.5em;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img{
+    max-width:100%;
+}
+
+
+/* 観光セクション */
+h3{
+    font-size: 24px;
+    font-weight: bold;
+    margin-top:20px;
+    letter-spacing: 30%;
+}
+
+.atrContent{
+    gap:1.25rem;
+}
+
+.detail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:20px;
+}
+
+.detail p{
+    text-align: left;
+    padding:0.5rem 2.3rem;
+    line-height: 19px;
+    font-size:12px;
+    background-color: rgba(237, 161, 132, 0.2);
+}
+
+.atrBorder{
+    display:block;
+    width: 67%;
+    height: 1px;
+    background: #000;
+    transform: rotate(180deg);
+    margin-top:1.25em;
+}
+
+p.item04{
+    width:100%;
+    text-align: justify;
+}
+
+/* -------------- */
+
+/* ミュージアムセクション */
+
+/* イントロダクション */
+.intro{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width:80%;
+    margin-block:80px 80px;
+}
+
+.introText{
+    text-align: justify;
+    line-height: 19px;
+    font-size:12px;
+    width:100%;
+    display:block;
+    margin: 12px auto;
+    /*余白できたときに中央寄せ */
+    max-width: 412px; 
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.intro span{
+    width: 100%;
+    height: 1px;
+    background: #000;
+    transform: rotate(180deg);
+}
+
+/* -------------- */
+h4, h5{
+    font-size:clamp(12px,2.3vw,20px);
+}
+
+.list{
+    display:flex;
+    flex-direction: column;
+    gap:2.5rem;
+}
+
+.list h4{
+    margin-block:0.5em;
+    font-weight: bold;
+}
+
+.box{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+button{
+    margin-left: auto;
+    border: solid 4px rgba(237, 161, 132, 0.2);
+    margin-top: 0.5rem;
+    font-size: clamp(12px, 2.3vw, 20px);
+    width: clamp(108px, 30vw, 150px);
+    height: clamp(36px, 9.5vw, 50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.border{
+    display:block;
+    margin:0 auto;
+    width: 67%;
+    height: 1px;
+    background: #000;
+}
+
+/* -------------- */
+
+/* スイーツセクション */
+h6{ 
+    font-size:24px; 
+    margin-bottom:12px;
+}
+
+.sweetsContent{
+    margin:3.8rem 0 1.25rem;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.set{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:78%;
+    padding:0 1.25em;
+}
+
+.setBorder{
+    margin-bottom:1em;
+    width:100%;
+}
+
+.setIntro{
+    width:100%;
+    font-size:12px;
+    text-align: justify;
+    line-height: 19px;
+}
+
+.article02{
+    margin-top: 20px;
+}
+
+.article01,
+.article06{
+    width: 78%;
+    margin-top: 20px;
+    padding:0 1.25em;
+}
+
+.article02,
+.article05{
+    width:76%;
+    padding:0 1.25em;
+    font-size:12px;
+    text-align: justify;
+    line-height: 19px;
+}
+
+.imgset{
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+    margin-block:20px;
+    margin-inline: calc(50% - 50vw);
+}
+
+.imgset img{ width: 47%; }
+
+.sweetsBorder{
+    display: block;
+    margin-bottom:20px;
+    width: 67%;
+    height: 1px;
+    background: #000;
+    transform: rotate(180deg);
+}
+
+.grid{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom:40px;
+}
+
+/* -------------- */
+
+
+/* モーダル全体 */
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:9999;
+}
+
+/* 黒い背景 
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.6);
+
+}
+
+/* 青い画面 
+.modal-content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width: 375px;
+    height: 426px;
+    background:#007AB7;
+} */
+
+.modalContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 375px;
+  height: 426px;
+  background: #007AB7;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+
+  transition:
+    transform .6s cubic-bezier(.22, 1, .36, 1),
+    opacity .6s ease;
+
+  z-index: 10000;
+}
+
+#modal.show .modalContent {
+  transform: translate(-50%, -50%) scale(.9);
+  opacity: 1;
+}
+
+/* 背景 */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  opacity: 0;
+  transition: opacity .6s ease;
+}
+
+#modal.show .overlay {
+  opacity: 1;
+}
+
+.fl {
+    display:flex;
+    justify-content: center;
+}
+
+.fl img {
+    width: 157px;
+    height: 165px;
+    margin: 0 10px;
+}
+
+#close{
+    float:right;
+    cursor:pointer;
+}
+#close {
+    width: auto;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    margin: 10px 10px;
+}
+
+#modalText {
+    text-align: left;
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 1.8;
+    padding: 0 22px;
+    margin-top: 40px;
+}
+
+#modalTitle {
+    color:#ffffff;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    margin: 60px 20px 40px 25px;
+}
+
+@media  screen and (min-width: 675px){
+p.item02,
+p.item04{
+    max-width:590px;
+}
+
+}
+
+@media screen and (min-width:768px){
+main{
+    margin:83px; 
+    text-align: center;
+}
+
+/* パンくず */
+nav{
+    margin-inline:103px auto;
+}
+nav ol{
+    display:flex;
+    height:58px;
+    align-items: center;
+}
+nav li,
+nav span{
+    font-size:clamp(20px,1vw,30px);
+    margin-inline:1px;
+}
+/* -------------- */
+
+/* 小見出し */
+h2{
+    font-size:clamp(24px, 3.5vw, 48px);
+}
+.container{
+    justify-content: left;
+    margin-inline:20px auto;
+    margin-block:1.25em clamp(40px, 4vw, 60px);
+}
+
+.midasi img {
+    width: clamp(150px, 35vw, 580px);
+    height: auto;
+}
+
+.rightContainer{
+    justify-content: right;/*左右変える*/
+    margin-block:1.25em clamp(40px, 4vw, 80px);
+    margin-inline:auto 20px;
+}
+/* --------------- */
+
+/* 観光セクション */
+.detail{
+    display:grid;                     
+    grid-template-columns: 3fr 2fr;
+    grid-template-areas:         
+        "image1 text1"        
+        "image2 text2";
+    align-items: center;
+    column-gap: clamp(30px, 4.5vw, 60px);
+    row-gap: clamp(25px, 3vw, 40px);
+    padding-inline:7px 0;
+}
+
+.item01{ grid-area:image1; }
+.item02{ grid-area:text1; }
+.item03{ grid-area:image2; }
+.item04{ grid-area:text2; }
+
+
+.item01, .item03{ 
+    width:100%;
+    object-fit: cover;
+}
+.item02, .item04{ 
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.item01 img,
+.item03 img{
+     width:100% 
+}
+
+h3{
+    letter-spacing: 30%;
+    font-size:clamp(24px, 2.7vw, 36px);
+    font-weight: bold;
+    margin-inline:7px auto;
+    margin-top:0;
+}
+
+.detail p{
+    font-size:clamp(10px, 1.3vw, 20px);
+    line-height:clamp(10px, 2vw,32px);
+    width:100%;
+    padding:0.5em clamp(8px, 2vw, 20px);
+    height: 100%;
+}
+.atrBorder,
+.border,
+.sweetsborder{
+    width: 38%;
+    margin-inline: auto;
+    grid-column: 1 / -1;
+}
+
+.atrBorder{
+    margin-block:40px 60px;
+}
+
+/* --------------- */
+
+
+/* ミュージアムセクション */
+.museumContent{
+    padding-inline:47px;
+}
+
+
+.introText{
+    text-align: justify;
+    line-height: 28px;
+    font-size:18px;
+    padding:0.75rem auto;
+}
+
+.intro span{
+    width: 100%;
+    height: 1px;
+    background: #000;
+    transform: rotate(180deg);
+    margin-block:1rem;
+}
+
+.intro{
+    width:37%;
+    margin-inline:clamp(5px, 0.8vw, 10px) auto;
+    margin-block:0 80px;
+}
+
+h4, h5{
+    font-size:clamp(20px,2.6vw,36px);
+}
+.list h4{
+    margin-block:0.6em 0.7em;
+}
+
+button{
+   font-size: clamp(16px, 1.5vw, 20px);
+   margin-top: 1em;
+   width: clamp(100px, 18vw, 212px);
+   height: clamp(55px, 6.5vw, 78px);
+}
+
+.list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-areas:
+        "box1 box2"
+        "box3 box4";
+    gap:clamp(60px, 4.5vw, 90px);
+    width:100%;
+    justify-items: center;
+    margin-inline: clamp(8px, 1vw, 20px) auto;
+}
+
+.box1{ grid-area:box1; }
+.box2{ grid-area:box2; }
+.box3{ grid-area:box3; }
+.box4{ grid-area:box4; }
+
+.box{
+    width:100%;
+}
+
+.listBorder{
+    margin-block:20px 40px;
+}
+
+button:hover{
+    background-color:rgba(237, 161, 132);
+    transition: 200ms ease-in;
+    font-size:1.3em;
+}
+
+
+/* モーダル画像をホバーで拡大 */
+.fl{
+    overflow: hidden;
+}
+
+.fl img {
+    width: 100%;
+    transition: transform 100ms ease-in;
+}
+
+.fl img:hover {
+    transform: scale(1.2);
+}
+
+/* --------------- */
+
+/* スイーツセクション */
+h6{
+    font-size:clamp(28px, 3.6vw, 36px);;
+}
+.set{
+    display: flex;
+    flex-direction: column;
+    width:38%;
+    align-items:center;
+    margin-inline: 50px auto;
+}
+
+.setBorder{
+    width:100%;
+}
+
+p.setIntro{
+    width:100%;
+    font-size:20px;
+    line-height: 32px;
+    margin-top:1.2rem;
+}
+
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-areas:
+        "img1 text1"
+        "imgset imgset"
+        "text2 img2";
+    justify-items: center;
+    margin:5rem 40px;
+    gap: clamp(35px, 4.5vw, 60px);
+}
+
+.article01{ 
+    grid-area:img1;
+    width:100%;
+    padding:0;
+    margin:0;
+ }
+.article02{ 
+    grid-area:text1; 
+}
+
+.imgset{ 
+    grid-area:imgset;
+    margin:0;
+}
+
+.article05{ 
+    grid-area:text2; 
+}
+.article06{ 
+    grid-area:img2; 
+    width:100%;
+    padding:0;
+    margin:0;
+}
+
+.imgset img{
+    width:37%;
+}
+
+.imgset{
+    justify-content: space-around;
+    height:100%;
+}
+p.font{
+    display:flex;
+    align-items:center;
+    font-size:clamp(16px, 1.6vw, 20px);
+    line-height:clamp(25px, 2.6vw,32px);
+    margin: 0 40px;
+    padding: 0
+}
+
+
+/* 記事を拡大 */
+.article02,
+.article05 {
+    transition: transform 200ms ease-in;
+}
+
+.article02:hover,
+.article05:hover {
+    transform: scale(1.4);
+}
+/* --------------- */
+
+/*青い画面*/ 
+.modalContent{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width: 90%;
+    max-width: 900px;
+     height: 670px;
+    z-index:10;
+}
+
+/*
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+ width: 90%;
+    max-width: 900px;
+    height: 670px;
+
+  background: #007AB7;
+
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+
+transition:
+  transform .6s cubic-bezier(.22, 1, .36, 1),
+  opacity .6s ease;
+
+  z-index: 10000;
+}
+
+#modal.show .modal-content {
+  transform: translate(-50%, -50%) scale(.9);
+  opacity: 1;
+}
+
+/* 背景 */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+
+  opacity: 0;
+  transition: opacity .6s ease;
+}
+
+#modal.show .overlay {
+  opacity: 1;
+}
+
+
+.fl img {
+    width: 60%;
+    height: auto;
+    max-width: 380px;
+    margin: 0 30px 20px 30px;
+}
+
+#modalText {
+    margin: 20px 20px;
+    text-align: left;
+    font-size: 24px;
+}
+#modalTitle {
+    width: 50%;
+    font-size: 36px;
+    text-align: left;
+    margin: 10px 10px 30px 40px;
+}
+#close {
+    margin:  0 20px;
+}
+}
