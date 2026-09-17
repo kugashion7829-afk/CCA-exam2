@@ -1,6 +1,6 @@
 ## Copyright / Usage
 
-Copyright © 2026 久我嗣生 庄司実生 樋口英駿. All Rights Reserved.
+Copyright © 2026 久我嗣生 庄司実生 樋口映峻. All Rights Reserved.
 
 本リポジトリに含まれる**制作者本人が作成したソースコード**について、無断での転載、再配布、流用、改変したものの公開・提出、商用利用を禁止します。
 
